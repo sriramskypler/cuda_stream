@@ -1,0 +1,11 @@
+blinker==1.8.2
+click==8.1.7
+dlib @ file:///home/annaincubator/dlib/dist/dlib-19.24.99-cp312-cp312-linux_x86_64.whl#sha256=8beb1fd0afdb48435d966f556ab514f3797124bdf622f93bb2fb23fde5b44574
+Flask==3.0.3
+imutils==0.5.4
+itsdangerous==2.2.0
+Jinja2==3.1.4
+MarkupSafe==2.1.5
+numpy==1.26.4
+opencv-python-headless==4.10.0.82
+Werkzeug==3.0.3

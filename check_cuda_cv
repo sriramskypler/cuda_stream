@@ -1,0 +1,26 @@
+import cv2
+import numpy as np
+
+# Check CUDA support
+print("CUDA support:", cv2.cuda.getCudaEnabledDeviceCount())
+
+# Create a random image
+img = np.random.randint(0, 256, (512, 512, 3), dtype=np.uint8)
+
+# Upload image to GPU
+gpu_img = cv2.cuda_GpuMat()
+gpu_img.upload(img)
+
+# Convert image to grayscale using GPU
+gpu_gray = cv2.cuda.cvtColor(gpu_img, cv2.COLOR_BGR2GRAY)
+
+# Download the result back to CPU
+gray_img = gpu_gray.download()
+
+print("Image converted to grayscale using CUDA.")
+
+# Display the original and grayscale images (if running in an environment that supports GUI)
+# cv2.imshow('Original Image', img)
+# cv2.imshow('Grayscale Image', gray_img)
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
